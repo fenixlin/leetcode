@@ -3,6 +3,7 @@ Repository holding all my LeetCode programs. Short comments are made on the firs
 
 ## Environment:
 C++ compiler: gcc 4.8.2, with lots C++ 11 features in code.
+Unit test: googletest 1.7.0, see setup steps in script "setupGTest.sh".
 
 Python compiler: python 2.7.6
 
