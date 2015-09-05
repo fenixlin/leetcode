@@ -1,5 +1,6 @@
 // Quick sort, O(nlogn). Pure O(n^2) will be TLE.
 // Good problem to think in different ways.
+// Better solution in O(n) : recursively eliminate the weaker vertical line, shrinking from both ends (assuming the best one is the one with both ends from the beginning).
 
 #include <algorithm>
 #include <vector>
