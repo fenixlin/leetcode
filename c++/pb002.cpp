@@ -3,7 +3,10 @@
 
 #include <cstddef>
 #include <iostream>
+#include "gtest/gtest.h"
+
 using namespace std;
+
 // Definition for singly-linked list.
 struct ListNode {
      int val;
@@ -39,7 +42,18 @@ public:
     }
 };
 
-int main() {
+TEST(case1, test1) {
     Solution sol;
-    cout << sol.addTwoNumbers(new ListNode(0), new ListNode(0))->val << endl;
+    ListNode* h1 = new ListNode(2);
+    h1->next = new ListNode(4);
+    h1->next->next = new ListNode(3);
+    ListNode* h2 = new ListNode(5);
+    h2->next =  new ListNode(6);
+    h2->next->next = new ListNode(4);
+    EXPECT_EQ(8, sol.addTwoNumbers(h1,h2)->next->next->val);
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

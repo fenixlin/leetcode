@@ -3,6 +3,7 @@
 
 #include <map>
 #include <iostream>
+#include <gtest/gtest.h>
 
 using namespace std;
 
@@ -24,8 +25,13 @@ public:
     }
 };
 
-int main() {
+TEST(case1, test1) {
     Solution sol;
-    cout << sol.lengthOfLongestSubstring(string("abba")) << endl;
-    return 0;
+    EXPECT_EQ(2, sol.lengthOfLongestSubstring("abba"));
+    EXPECT_EQ(3, sol.lengthOfLongestSubstring("abbca"));
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

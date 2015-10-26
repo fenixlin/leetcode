@@ -6,6 +6,7 @@
 #include <vector>
 #include <iostream>
 #include <map>
+#include "gtest/gtest.h"
 
 using namespace std;
 
@@ -33,12 +34,16 @@ public:
     }
 };
 
-int main() {
-    vector<int> tmp = {-1, -2, -3, -4, -5};
+TEST(case1, test1) {
+    typedef vector<int> V;
     Solution sol;
-    vector<int> result = sol.twoSum(tmp, -8);
-    for (int num : result) {
-        cout << num << " ";
-    }
-    cout << endl;
+    V v = V{-1,-2,-3,-4,-5};
+    V r = sol.twoSum(v, -8);
+    EXPECT_EQ(3,r[0]);
+    EXPECT_EQ(5,r[1]);
+}
+
+int main(int argc, char** argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
